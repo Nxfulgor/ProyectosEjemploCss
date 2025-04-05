@@ -317,19 +317,24 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition-property: transform, background-size;
   transition-duration: 0.5s;
-}
-
-.modelo:hover {
-  transform: scale(1.1) rotate(2deg);
-  background-size: 30rem;
-  cursor: pointer;
 }
 
 @media (min-width: 992px) {
   .modelo {
     margin-bottom: 0;
+  }
+}
+
+@media (min-width: 500px) {
+  .modelo {
+    transition-property: transform, background-size;
+  }
+
+  .modelo:hover {
+    transform: scale(1.1) rotate(2deg);
+    background-size: 30rem;
+    cursor: pointer;
   }
 }
 
@@ -382,6 +387,7 @@ img {
   background-position: top center;
   background-repeat: no-repeat;
   background-size: 100%, 70rem;
+  margin-bottom: var(--separacion);
 }
 
 .notavif.notwebp .newsletter {
@@ -494,11 +500,21 @@ img {
 }
 
 /** Footer **/
+footer {
+  margin-top: 1rem;
+}
 .footer p {
   font-family: var(--fuenteSecundaria);
   text-transform: uppercase;
-  font-size: 3rem;
+  font-size: 2rem;
   color: var(--primario);
   font-weight: 900;
   padding: calc(var(--separacion) / 2) 0;
+  opacity: 0;
+}
+
+@media (min-width: 420px) {
+  .footer p {
+    opacity: 1;
+  }
 }
